@@ -14,7 +14,7 @@ Simple Elixir wrapper for the Appveyor CI API
 ## Usage
 
 ```elixir
-iex(1)> Appveyor.collaborators |> List.first |> Map.take([:fullName, :email])
+iex(1)> Appveyor.Teams.collaborators |> List.first |> Map.take([:fullName, :email])
 %{email: "foo@bar.com", fullName: "John Smith"}
 ```
 
