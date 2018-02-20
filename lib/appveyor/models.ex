@@ -1,3 +1,10 @@
+defmodule NewRole do
+  @derive [Poison.Encoder]
+  defstruct(
+    name: nil
+  )
+end
+
 defmodule Role do
   defstruct(
     created: nil,
@@ -12,6 +19,14 @@ defmodule Group do
   defstruct(
     name: nil,
     permissions: nil
+  )
+end
+
+defmodule NewProject do
+  @derive [Poison.Encoder]
+  defstruct(
+    repositoryProvider: nil,
+    repositoryName: nil
   )
 end
 
@@ -34,6 +49,18 @@ defmodule Project do
   )
 end
 
+defmodule NewUser do
+  @derive [Poison.Encoder]
+  defstruct(
+    fullName: nil,
+    email: nil,
+    roleId: nil,
+    generatePassword: true,
+    password: nil,
+    confirmPassword: nil
+  )
+end
+
 defmodule User do
   defstruct(
     accountId: nil,
@@ -50,6 +77,14 @@ defmodule User do
     notifyWhenBuildStatusChangedOnly: nil,
     created: nil,
     updated: nil
+  )
+end
+
+defmodule NewCollaborator do
+  @derive [Poison.Encoder]
+  defstruct(
+    email: nil,
+    roleId: nil
   )
 end
 
