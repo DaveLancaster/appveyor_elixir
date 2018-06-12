@@ -4,12 +4,20 @@ defmodule Appveyor do
   end
 
   def environments do
-    Api.fetch("/environments")
+    "/environments"
+      |> Api.fetch()
       |> Poison.decode!(as: [%Environment{}])
   end
   
   def projects do
-    Api.fetch("/projects")
+    "/projects"
+      |> Api.fetch()
       |> Poison.decode!(as: [%Project{}])
+  end
+
+  def last_build(account_name, project_slug) do
+    "/projects/" <> account_name <> "/" <> project_slug
+      |> Api.fetch()
+      |> Poison.decode!(as: %{"project" => %Project{}, "build" => %Build{}})
   end
 end

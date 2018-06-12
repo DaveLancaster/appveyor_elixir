@@ -116,3 +116,26 @@ defmodule Environment do
     updated: nil
   )
 end
+
+defmodule Build do
+  defstruct(
+    buildId: nil,
+    jobs: nil,
+    buildNumber: nil,
+    version: nil,
+    message: nil,
+    branch: nil,
+    commitId: nil,
+    authorName: nil,
+    authorUsername: nil,
+    committerName: nil,
+    committerUsername: nil,
+    committed: nil,
+    messages: nil,
+    status: nil,
+    started: nil,
+    finished: nil,
+    created: nil,
+    updated: nil
+  )
+end
