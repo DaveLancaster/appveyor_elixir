@@ -1,6 +1,7 @@
 defmodule Appveyor do
   def add_project(%NewProject{} = project) do
-    Api.post!("/projects/", project)
+    Appveyor.Endpoints.projects
+      |> Api.post!(project)
   end
 
   def environments do
